@@ -143,7 +143,7 @@ function getAnswer(complaint)
         {
             for(var k = 0; k < matchTest.length; k++)
             {
-                if(splitComplaint[j] == matchTest[k])
+                if(splitComplaint[j].toLowerCase() == matchTest[k].toLowerCase())
                 {
                     currentMatch++;
                 }
@@ -159,7 +159,7 @@ function getAnswer(complaint)
 
     if(greatestMatch == 0)
     {
-        return 'Sorry, i can\'t assist with your problem, please contact support email kppl@fajar.com.';
+        return 'Sorry, i can\'t assist with your problem, please contact support email kppl@kelompok7.com.';
     }
     else
     {
@@ -172,8 +172,9 @@ function initializeAnswer(value)
     currentChatAnswerSubstringIndex = 0;
     currentChatAnswerNode = document.createElement('div');
     currentChatAnswerNode.classList.add('chat-answer');
-
     chatScrollable.appendChild(currentChatAnswerNode);
+
+    chatScrollable.scrollTop = chatScrollable.scrollHeight;
     
     setTimeout(answerThinking, 500);
 }
